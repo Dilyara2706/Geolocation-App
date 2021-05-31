@@ -47,6 +47,7 @@ class MainActivity : AppCompatActivity() {
             && grantResults.first() == PackageManager.PERMISSION_GRANTED
         ) {
             tv_service_state.text = "Сервис включен"
+            sendServiceCommand("start_service")
         }
     }
 

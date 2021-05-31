@@ -22,8 +22,7 @@ class LocationService : Service() {
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         when (intent?.getStringExtra("command")) {
-            "start_service" -> LocationHelper.getInstance()
-                .startLocationListening(this.applicationContext, sendNotification)
+            "start_service" -> LocationHelper.getInstance().startLocationListening(this.applicationContext, sendNotification)
             "stop_service" -> {
                 stopService(intent)
                 LocationHelper.getInstance().stopLocating()
